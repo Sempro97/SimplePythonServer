@@ -1,8 +1,8 @@
-FROM python:3.6
+FROM python:3.8-slim-buster
 RUN mkdir /usr/src/app/
 COPY . /usr/src/app/
 WORKDIR /usr/src/app/
-EXPOSE 5000
+EXPOSE 8080
 RUN pip install -r requirements.txt
-CMD ["python", "app.py"]
+CMD ["python", "main.py"]
 

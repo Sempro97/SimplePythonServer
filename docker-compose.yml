@@ -1,22 +1,12 @@
 version: '3'
 services: 
-    product-service:
-        build: ./api-nasa/
+    http:
+        build: ./source/
         volumes:
-            - ./api-nasa/:/usr/src/app/
+            - ./source/:/usr/src/app/
         ports: 
-            - 5000:5000
+            - 8080:8080
         environment: 
-            PORT: 5000
+            PORT: 8080
+            #Flask non richiede di essere riavviato a ogni modifica
             FLASK_DEBUG: 1
-        networks: 
-            - arpanet 
-    db:
-        image: postgres
-        restart: always
-        environment:
-            POSTGRES_PASSWORD: alisson123
-        networks: 
-            - arpanet
-    networks: 
-        - arpanet
