@@ -5,8 +5,8 @@ services:
         volumes:
             - ./source/:/usr/src/app/
         ports: 
-            - 8080:8080
+            - 80:80
         environment: 
-            PORT: 8080
+            PORT: 80
             #Flask non richiede di essere riavviato a ogni modifica
             FLASK_DEBUG: 1
